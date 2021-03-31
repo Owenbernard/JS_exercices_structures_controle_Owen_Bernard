@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>XML Schéma</title>
+	<link rel="stylesheet" type="text/css" href="new1.css">
+</head>
+<body>
+
+	<h1 id="Grtitre" >Java Script structure de contrôle </h1>
+
+
+	<div id="Cb">
+		
+		<h5>Exercice 1 : Ecrire une page qui permet de saisir 3 nombres. Un bouton affiche leur somme, un autre le produit , un autre la moyenne, un autre le max de ces valeurs</h5>
+		
+		<h4 id="ChoixText"></h4>
+		
+		<script>
+			
+			var x;
+			var y;
+			var z;
+			
+			function ChoixC(x,y,z) {
+			
+				var x = prompt('premier nombre');
+				var y = prompt('second nombre');
+				var z = prompt('troisieme nombre');
+				var Max;
+					//text 
+				document.getElementById("ChoixText").innerHTML = x + ' - ' + y + ' - ' + z;
+				x = parseInt(x);
+				y = parseInt(y);
+				z = parseInt(z);
+				console.log(x, 	y,z);
+				return x,y,z;
+				
+			
+			}
+			function SommeC(x,y,z) {
+			
+				alert(x+y+z);
+				console.log(x,y,z);
+							
+			}
+			function ProduitC(x,y,z) {
+			
+				alert(x*y*z);
+			
+			}
+			function MoyenneC(x,y,z) {
+			
+				alert((x*y*z)/3);
+			
+			}
+			function MaxC(x,y,z) {
+			
+				if (x < y) {
+				
+					Max = y;
+					
+				}else{
+				
+					Max = x;
+				
+				}
+				if (x < z) {
+				
+					Max = z;
+					
+				}
+				alert(Max);
+			
+			}
+		</script>
+		
+		<button  name="But0" onclick ="ChoixC();">Selection Chiffre</button>
+		<button  name="But1" onclick ="SommeC();">Somme</button>
+		<button  name="But2" onclick ="ProduitC();">Produit</button>
+		<button  name="But3" onclick ="MoyenneC();">Moyenne</button>
+		<button  name="But4" onclick ="MaxC();">Max</button>
+		
+	</div>
+	
+	<div id="CA">
+		
+		<h5>Exercice 2 : Ecrire une page qui permet de saisir le prix de l’article HT et son nombre d’exemplaires,Une liste de choix affiche les différents taux de TVA.A la saisie de ces 3 valeurs (0 par défaut), le prix TTC est affiché (pas de bouton pour appeler la fonction de calcul du prix TTC</h5>
+		
+		<h3 id="Taxe"></h3>
+		
+		<script>
+			
+			function ChoixTva() {
+			
+				var x2 = parseInt(prompt('Prix Hors Taxe'));
+				var y2 = parseInt(prompt('Nombre'));
+				var z2;
+				console.log(x2,y2,z2);
+				
+				switch (z2 = parseInt(prompt('Type Taux Tva'))) {
+				
+					case 1:
+					
+						document.getElementById("Taxe").innerHTML = 'Prix HT : ' + x2 + ' $<br>Nb : ' + y2 + '<br>TTC : ' + x2 * y2 / 5.5 + ' $ ';
+				
+					break;
+					case 2:
+					
+						document.getElementById("Taxe").innerHTML = 'Prix HT : ' + x2 + ' $<br>Nb : ' + y2 + '<br>TTC : ' + x2 * y2 / 2.1 + ' $ ';
+				
+					break;
+					case 3:
+				
+						document.getElementById("Taxe").innerHTML = 'Prix HT : ' + x2 + ' $<br>Nb : ' + y2 + '<br>TTC : ' + x2 * y2 / 10 + ' $ ';
+				
+					break;
+			
+				}
+			
+			}
+			
+		</script>
+		
+		<button  name="But5" onclick ="ChoixTva();">TVA</button>
+		
+	</div>
+	
+	<div id="DA">
+		
+		<h5>Exercice 3 : Ecrire une page qui permet de saisir un verbe du 1er groupe et qui en affiche la conjugaison au présent</h5>
+		
+		<h3 id="VerbeT"></h3>
+		
+		<script>
+			function ChoixVerbe() {
+				
+				var verbe = (prompt('Verbe du premier Groupe'));
+				var verifverbe = verbe.substr(verbe.length - 2);
+				console.log(verifverbe);
+				var verbe2;
+				console.log(verbe);
+				//text 
+				
+				if (verbe === "") {
+			
+					document.getElementById("VerbeT").innerHTML = 'Veuillez saisir un verbe d\'abord';
+				
+				}else if (verifverbe == "er" ) {
+			
+					var verbe2 = verbe.substring(0, verbe.length - 1);
+					var verbe2 = verbe2.substring(0, verbe2.length - 1);
+					document.getElementById("VerbeT").innerHTML = verbe + '<br>Je ' + verbe2 + '<u>e</u><br>Tu ' + verbe2 + '<u>es</u><br>Il ' + verbe2 + '<u>e</u><br>Nous ' + verbe2 + '<u>ons</u><br>Vous ' + verbe2 + '<u>ez</u><br>Ils ' + verbe2 + '<u>ent</u><br>'; 
+			
+				}else {
+			
+					document.getElementById("VerbeT").innerHTML = ('Ce verbe nest pas du premier groupe');
+				
+				}
+				
+			}
+		</script>
+		
+		<button  name="But5" onclick ="ChoixVerbe();">Inserer Verbe</button>
+	</div>
+	
+	<div id="CT">
+		
+		<h5>Exercice 4 : Ecrire une page qui permet de saisir Nom et Prénom et affiche les initiales</h5>
+		
+		<h3 id="NomPrenomT"></h3>
+		
+		<script>
+			function ChoixNP() {
+				
+				var nom = (prompt('Nom'));
+				var prenom = (prompt('Prenom'));
+				console.log(nom,prenom);
+				
+				//text 
+				var nom = nom.substr(0,1);
+				var prenom = prenom.substr(0,1);
+				
+				document.getElementById("NomPrenomT").innerHTML = nom + '.' + prenom; 
+			
+			}
+		</script>
+		
+		<button  name="But6" onclick ="ChoixNP();">Inserer Nom et Prenom</button>
+	</div>
+	
+	<div id="CT">
+		
+		<h5>Exercice 5 : Ecrire une page qui permet de saisir un mot, une fonction affichera si ce mot est un palindrome</h5>
+		
+		<h3 id="PalindromeT"></h3>
+		
+		<script>
+			
+			function LunchPalin() {
+			
+				var Pal = prompt("Veillez saisir votre mot").toLowerCase();
+				Pal1 = [...Pal].reverse().join('');
+
+				if (Pal === "") {
+			
+					console.log('Veuillez saisir un mot d\'abord');
+				
+				}else if (Pal === Pal1) {
+			
+					document.getElementById("PalindromeT").innerHTML = (Pal + ' est un palindrome');
+				
+				}else {
+			
+					document.getElementById("PalindromeT").innerHTML = (Pal + ' n\'est pas un palindrome');
+				
+				}
+			}
+		</script>
+		
+		<button  name="But7" onclick ="LunchPalin();">Inserer Mot</button>
+	</div>
+	
+	<div id="DC">
+	
+		<h5>Exercice 6 : Ecrire une page qui permet de saisir quatre entiers et qui affiche la moyenne des nombres positifs</h5>
+		<h3 id="MoyNbPoT"></h3>
+		
+		<script>
+			function MoyNbPo() {
+				
+				i = 4;
+				repeat
+				
+					var nbr = parseInt(prompt('nbr'));
+					var nbrTot;
+					var div;
+					
+					if (nbr > 0) {
+					
+						nbrTot += nbr;
+						div += 1;
+					
+					}
+					i --;
+				
+				until (i = 0)
+							
+				nbrTot /= div;
+				document.getElementById("MoyNbPoT").innerHTML = nrbTot ;
+				
+			}
+		</script>
+		
+		<button  name="But8" onclick ="MoyNbPo();">Inserer Nombre</button>
+	</div>
+	
+	<div id="AC">
+	
+		<h5>Exercice 7 : Ecrire une page qui permet de saisir l’âge d’un enfant à l’utilisateur</h5>
+		<h3 id="AgeEnfantT"></h3>
+		
+		<script>
+			function AgeEnfant() {
+				
+				var age = parseInt(prompt('Age'));
+				var type;
+				console.log(age);
+				
+				switch (true) {
+				
+				case (age < 8 && age >= 6):
+					console.log("Poussin"); 
+					type = 'Poussin';
+				break;
+				case (age < 10 && age >= 8):
+					console.log("Pupille");
+					type = 'Pupille';
+				break;
+				case (age < 12 && age >= 10):
+					console.log("Minime");
+					type = 'Minime';
+				break;
+				case (age >= 12):
+					console.log("Cadet"); 
+					type = 'Cadet';
+				break;
+				default: console.log('Trop jeune');
+			
+				}
+			
+				document.getElementById("AgeEnfantT").innerHTML = type ;
+				
+			}
+		</script>
+		
+		<button  name="But9" onclick ="AgeEnfant();">Inserer âge</button>
+	</div>
+	
+	<div id="GT">
+	
+		<h5>'A revoir' Exercice 8 : Ecrire une page qui permet de saisir un nombre compris entre 1 et 5 jusqu’à ce que la réponse convienne.Tant que la saisie n’est pas bonne la zone de saisie est bordée de rouge, quand elle est correcte le fond passe en vert clair et la bordure en vert foncé.</h5>
+		<h3 id="VFsurChiffreT"></h3>
+		
+		
+		<input type="text" id="insetext" name="body" value="">
+		<script>
+			function VFsurChiffre() {
+				
+				var vrai = document.getElementById('insetext').value;
+				
+				console.log(vrai);
+				
+				
+				if (vrai < 5 && vrai > 1) {
+									
+					document.getElementById("VFsurChiffreT").innerHTML = 'nombre invalide';
+					document.getElementById('insetext').style.borderColor ='red';
+				
+				}else{
+				
+					document.getElementById('insetext').style.borderColor ='green';
+
+				}
+				
+			}
+		</script>
+		
+		<button  name="But9" onclick ="VFsurChiffre();">Inserer nombre</button>
+	</div>
+	
+	<div id="TV">
+	
+		<h5>Exercice 9 : Votre page propose de deviner un entier caché, A chaque valeur saisie par l’utilisateur, le programme lui indique si plus grand ou plus petit afin de le guider</h5>
+		<h3 id="AleasurChiffreT"></h3>
+		
+		
+		<input type="text" id="insetext2" name="body" value="">
+		<script>
+		
+			function AleasurChiffre() {
+			
+				var nombBase = Math.round(Math.random() * 150);
+				console.log(nombBase);
+				
+			}
+			
+			function LocksurChiffre(nombBase) {
+				
+				var nomb = document.getElementById('insetext2').value;
+				
+				console.log(nomb);
+				if (nomb > nombBase) {
+									
+					document.getElementById("AleasurChiffreT").innerHTML = 'Trop grand' ;
+				
+				}
+				if (nomb < nombBase) {
+									
+					document.getElementById("AleasurChiffreT").innerHTML = 'Trop petit' ;
+				
+				}
+				
+			}
+		</script>
+		
+		<button  name="But10" onclick ="LocksurChiffre();">Inserer Nombre</button>
+		<button  name="But10" onclick ="AleasurChiffre();">Génération Nombre</button>
+		
+		
+	</div>
+	
+	<div id="GH">
+	
+		<h5>Exercice 9 : Votre page propose de deviner un entier caché, A chaque valeur saisie par l’utilisateur, le programme lui indique si plus grand ou plus petit afin de le guider</h5>
+		<h3 id="AleasurChiffreT"></h3>
+		
+		
+		<input type="text" id="insetext2" name="body" value="">
+		<script>
+		
+			function AleasurChiffre() {
+			
+				var nombBase = Math.round(Math.random() * 150);
+				console.log(nombBase);
+				
+			}
+			
+			function LocksurChiffre(nombBase) {
+				
+				var nomb = document.getElementById('insetext2').value;
+				
+				console.log(nomb);
+				if (nomb > nombBase) {
+									
+					document.getElementById("AleasurChiffreT").innerHTML = 'Trop grand' ;
+				
+				}
+				if (nomb < nombBase) {
+									
+					document.getElementById("AleasurChiffreT").innerHTML = 'Trop petit' ;
+				
+				}
+				
+			}
+		</script>
+		
+		<button  name="But10" onclick ="LocksurChiffre();">Inserer Nombre</button>
+		<button  name="But10" onclick ="AleasurChiffre();">Génération Nombre</button>
+		
+		
+	</div>
+
+</body>
+</html>
