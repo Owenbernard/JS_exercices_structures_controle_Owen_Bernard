@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>XML Schéma</title>
+	<link rel="stylesheet" type="text/css" href="new1.css">
+</head>
+<body>
+
+	<p>
+		<a href="../../Index.html" class="bouton">Vers la page Index</a>
+	</p>
+
+	<h1 id="Grtitre" ><u>Java Script structure de contrôle </u></h1>
+
+
+	<div id="Cb">
+		
+		<h5>Exercice 1 : Ecrire une page qui permet de saisir 3 nombres. Un bouton affiche leur somme, un autre le produit , un autre la moyenne, un autre le max de ces valeurs</h5>
+		
+		<h4 id="ChoixText"></h4>
+		
+		<input type="text" id="premierChiffre" name="body" value="">
+		<input type="text" id="secondChiffre" name="body" value="">
+		<input type="text" id="troisiemeChiffre" name="body" value="">
+		
+		<script>
+			
+			function SommeC() {
+			
+				x = parseInt(document.getElementById('premierChiffre').value);
+				y = parseInt(document.getElementById('secondChiffre').value);
+				z = parseInt(document.getElementById('troisiemeChiffre').value);
+			
+				document.getElementById("ChoixText").innerHTML = x + ' - ' + y + ' - ' + z;
+				alert(x+y+z);
+							
+			}
+			function ProduitC() {
+			
+				x = parseInt(document.getElementById('premierChiffre').value);
+				y = parseInt(document.getElementById('secondChiffre').value);
+				z = parseInt(document.getElementById('troisiemeChiffre').value);
+			
+				document.getElementById("ChoixText").innerHTML = x + ' - ' + y + ' - ' + z;
+				alert(x*y*z);
+			
+			}
+			function MoyenneC() {
+			
+				x = parseInt(document.getElementById('premierChiffre').value);
+				y = parseInt(document.getElementById('secondChiffre').value);
+				z = parseInt(document.getElementById('troisiemeChiffre').value);
+			
+				document.getElementById("ChoixText").innerHTML = x + ' - ' + y + ' - ' + z;
+				
+				alert((x*y*z)/3);
+			
+			}
+			function MaxC() {
+			
+				x = parseInt(document.getElementById('premierChiffre').value);
+				y = parseInt(document.getElementById('secondChiffre').value);
+				z = parseInt(document.getElementById('troisiemeChiffre').value);
+			
+				document.getElementById("ChoixText").innerHTML = x + ' - ' + y + ' - ' + z;
+				
+				var Max;
+				if (x < y) {
+				
+					Max = y;
+					
+				}else{
+				
+					Max = x;
+				
+				}
+				if (x < z) {
+				
+					Max = z;
+					
+				}
+				alert(Max);
+			
+			}
+		</script>
+		
+		<button  name="But1" onclick ="SommeC();">Somme</button>
+		<button  name="But2" onclick ="ProduitC();">Produit</button>
+		<button  name="But3" onclick ="MoyenneC();">Moyenne</button>
+		<button  name="But4" onclick ="MaxC();">Max</button>
+		
+	</div>
+	
+	<div id="CA">
+		
+		<h5>Exercice 2 : Ecrire une page qui permet de saisir le prix de l’article HT et son nombre d’exemplaires,Une liste de choix affiche les différents taux de TVA.A la saisie de ces 3 valeurs (0 par défaut), le prix TTC est affiché (pas de bouton pour appeler la fonction de calcul du prix TTC</h5>
+		
+		<h3 id="Taxe"></h3>
+		
+		<script>
+			
+			function ChoixTva() {
+			
+				var x2 = parseInt(prompt('Prix Hors Taxe'));
+				var y2 = parseInt(prompt('Nombre'));
+				var z2;
+				console.log(x2,y2);
+				
+				switch (z2 = parseInt(prompt('Type Taux Tva'))) {
+				
+					case 1:
+					
+						document.getElementById("Taxe").innerHTML = 'Prix HT : ' + x2 + ' $<br>Nb : ' + y2 + '<br>TTC : ' + x2 * y2 / 5.5 + ' $ ';
+				
+					break;
+					case 2:
+					
+						document.getElementById("Taxe").innerHTML = 'Prix HT : ' + x2 + ' $<br>Nb : ' + y2 + '<br>TTC : ' + x2 * y2 / 2.1 + ' $ ';
+				
+					break;
+					case 3:
+				
+						document.getElementById("Taxe").innerHTML = 'Prix HT : ' + x2 + ' $<br>Nb : ' + y2 + '<br>TTC : ' + x2 * y2 / 10 + ' $ ';
+				
+					break;
+			
+				}
+				console.log(z2);
+			
+			}
+			
+		</script>
+		
+		<button  name="But5" onclick ="ChoixTva();">TVA</button>
+		
+	</div>
+	
+	<div id="DA">
+		
+		<h5>Exercice 3 : Ecrire une page qui permet de saisir un verbe du 1er groupe et qui en affiche la conjugaison au présent</h5>
+		
+		<h3 id="VerbeT"></h3>
+		
+		<script>
+			function ChoixVerbe() {
+				
+				var verbe = (prompt('Verbe du premier Groupe'));
+				var verifverbe = verbe.substr(verbe.length - 2);
+				console.log(verifverbe);
+				var verbe2;
+				console.log(verbe);
+				//text 
+				
+				if (verbe === "") {
+			
+					document.getElementById("VerbeT").innerHTML = 'Veuillez saisir un verbe d\'abord';
+				
+				}else if (verifverbe == "er" ) {
+			
+					var verbe2 = verbe.substring(0, verbe.length - 1);
+					var verbe2 = verbe2.substring(0, verbe2.length - 1);
+					document.getElementById("VerbeT").innerHTML = verbe + '<br>Je ' + verbe2 + '<u>e</u><br>Tu ' + verbe2 + '<u>es</u><br>Il ' + verbe2 + '<u>e</u><br>Nous ' + verbe2 + '<u>ons</u><br>Vous ' + verbe2 + '<u>ez</u><br>Ils ' + verbe2 + '<u>ent</u><br>'; 
+			
+				}else {
+			
+					document.getElementById("VerbeT").innerHTML = ('Ce verbe nest pas du premier groupe');
+				
+				}
+				
+			}
+		</script>
+		
+		<button  name="But5" onclick ="ChoixVerbe();">Inserer Verbe</button>
+	</div>
+	
+	<div id="CT">
+		
+		<h5>Exercice 4 : Ecrire une page qui permet de saisir Nom et Prénom et affiche les initiales</h5>
+		
+		<h3 id="NomPrenomT"></h3>
+		
+		<script>
+			function ChoixNP() {
+				
+				var nom = (prompt('Nom'));
+				var prenom = (prompt('Prenom'));
+				console.log(nom,prenom);
+				
+				//text 
+				var nom = nom.substr(0,1);
+				var prenom = prenom.substr(0,1);
+				
+				document.getElementById("NomPrenomT").innerHTML = nom + '.' + prenom; 
+			
+			}
+		</script>
+		
+		<button  name="But6" onclick ="ChoixNP();">Inserer Nom et Prenom</button>
+	</div>
+	
+	<div id="CT">
+		
+		<h5>Exercice 5 : Ecrire une page qui permet de saisir un mot, une fonction affichera si ce mot est un palindrome</h5>
+		
+		<h3 id="PalindromeT"></h3>
+		
+		<script>
+			
+			function LunchPalin() {
+			
+				var Pal = prompt("Veillez saisir votre mot").toLowerCase();
+				Pal1 = [...Pal].reverse().join('');
+
+				if (Pal === "") {
+			
+					console.log('Veuillez saisir un mot d\'abord');
+				
+				}else if (Pal === Pal1) {
+			
+					document.getElementById("PalindromeT").innerHTML = (Pal + ' est un palindrome');
+				
+				}else {
+			
+					document.getElementById("PalindromeT").innerHTML = (Pal + ' n\'est pas un palindrome');
+				
+				}
+			}
+		</script>
+		
+		<button  name="But7" onclick ="LunchPalin();">Inserer Mot</button>
+	</div>
+	
+	<div id="DC">
+	
+		<h5>Exercice 6 : Ecrire une page qui permet de saisir quatre entiers et qui affiche la moyenne des nombres positifs</h5>
+		<h3 id="MoyNbPoT"></h3>
+		
+		<script>
+			function MoyNbPo() {
+			
+				var nbrTot = 0;
+				var div = 0;
+				i = 4;
+				while (i > 0) {
+				
+					var nbr = parseInt(prompt('nbr'));
+					
+					if (nbr > 0) {
+					
+						nbrTot = parseInt(nbrTot + nbr);
+						div += 1;
+						console.log(nbrTot,nbr);
+					
+					}
+					i --;
+				
+				}
+							
+				nbrTot = parseInt(nbrTot / div);
+				console.log(nbrTot);
+				document.getElementById("MoyNbPoT").innerHTML = parseInt(nbrTot) ;
+				
+			}
+		</script>
+		
+		<button  name="But8" onclick ="MoyNbPo();">Inserer Nombre</button>
+	</div>
+	
+	<div id="AC">
+	
+		<h5>Exercice 7 : Ecrire une page qui permet de saisir l’âge d’un enfant à l’utilisateur</h5>
+		<h3 id="AgeEnfantT"></h3>
+		
+		<script>
+			function AgeEnfant() {
+				
+				var age = parseInt(prompt('Age'));
+				var type;
+				console.log(age);
+				
+				switch (true) {
+				
+				case (age < 8 && age >= 6):
+					console.log("Poussin"); 
+					type = 'Poussin';
+				break;
+				case (age < 10 && age >= 8):
+					console.log("Pupille");
+					type = 'Pupille';
+				break;
+				case (age < 12 && age >= 10):
+					console.log("Minime");
+					type = 'Minime';
+				break;
+				case (age >= 12):
+					console.log("Cadet"); 
+					type = 'Cadet';
+				break;
+				default: console.log('Trop jeune');type = 'Trop jeune';
+			
+				}
+			
+				document.getElementById("AgeEnfantT").innerHTML = type ;
+				
+			}
+		</script>
+		
+		<button  name="But9" onclick ="AgeEnfant();">Inserer âge</button>
+	</div>
+	
+	<div id="GT">
+	
+		<h5>Exercice 8 : Ecrire une page qui permet de saisir un nombre compris entre 1 et 5 jusqu’à ce que la réponse convienne.Tant que la saisie n’est pas bonne la zone de saisie est bordée de rouge, quand elle est correcte le fond passe en vert clair et la bordure en vert foncé.</h5>
+		<h3 id="VFsurChiffreT"></h3>
+		
+		
+		<input type="text" id="insetext" name="body" value="">
+		<script>
+			function VFsurChiffre() {
+				
+				var vrai = document.getElementById('insetext').value;
+				
+				console.log(vrai);
+				
+				
+				if (vrai > 5 || vrai < 1) {
+									
+					document.getElementById("VFsurChiffreT").innerHTML = 'nombre invalide';
+					document.getElementById('insetext').style.borderColor ='red';
+				
+				}else{
+					
+					document.getElementById("VFsurChiffreT").innerHTML = 'nombre valide';
+					document.getElementById('insetext').style.borderColor ='green';
+
+				}
+				
+			}
+		</script>
+		
+		<button  name="But9" onclick ="VFsurChiffre();">Inserer nombre</button>
+	</div>
+	
+	<div id="TV">
+	
+		<h5>Exercice 9 : Votre page propose de deviner un entier caché, A chaque valeur saisie par l’utilisateur, le programme lui indique si plus grand ou plus petit afin de le guider</h5>
+		<h3 id="AleasurChiffreT"></h3>
+		
+		
+		<input type="text" id="insetext58" name="body" value="">
+		<script>
+			var nombBase = Math.round(Math.random() * 150);
+			console.log(nombBase);
+
+			
+			function LocksurChiffre() {
+				
+				var nomb = parseInt(document.getElementById('insetext58').value);
+				console.log(nomb,nombBase);
+								
+				
+				if (nomb < nombBase) {
+									
+					document.getElementById("AleasurChiffreT").innerHTML = 'Trop petit' ;
+				
+				}else{
+					if (nomb > nombBase) {
+									
+						document.getElementById("AleasurChiffreT").innerHTML = 'Trop grand' ;
+				
+					}else{
+						if (nomb = nombBase) {
+									
+							document.getElementById("AleasurChiffreT").innerHTML = 'Vous avez trouvé !' ;
+				
+						}
+					}
+				}
+				
+				
+				
+			}
+		</script>
+		
+		<button  name="But10" onclick ="LocksurChiffre();">Inserer Nombre</button>
+		
+		
+	</div>
+	
+	<div id="GH">
+	
+		<h5>Exercice 10 : L’utilisateur saisit le numéro d’un mois de l’année (entre 1 et 12, le valider) et le programme affiche le nom du mois</h5>
+		<h3 id="AleasurMoisT"></h3>
+		
+		
+		<input type="text" id="insetext3" name="body" value="">
+		<script>
+		
+			var MoisExo10 = ["Janvier","Fevriers","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre"];
+				
+			function AleasurChiffre2(nombM) {
+			
+				nombM = parseInt(document.getElementById('insetext3').value);
+				document.getElementById("AleasurMoisT").innerHTML = MoisExo10[nombM-1];
+				
+			}
+		</script>
+		
+		<button  name="But11" onclick ="AleasurChiffre2();">Inserer Mois</button>
+		
+		
+	</div>
+	<div id="ET">
+	
+		<h5>Exercice 11 : L’utilisateur saisit une date, la page lui affiche la date du lendemain</h5>
+		<h3 id="LendemainT"></h3>
+		
+		
+		<input type="text" id="insetextJour" name="body" value="">
+		<input type="text" id="insetextMois" name="body" value="">
+		<input type="text" id="insetextAnnee" name="body" value="">
+		<script>
+				
+			function Lendemain() {
+			
+				var Jour = parseInt(document.getElementById('insetextJour').value);
+				var Mois = parseInt(document.getElementById('insetextMois').value)
+				var Annee = parseInt(document.getElementById('insetextAnnee').value);
+				Jour += 1;
+				
+				console.log(Jour,Mois,Annee);
+				
+				switch (Mois) {
+				
+				case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+					if (Jour > 31) {
+					
+						Jour = 1;
+						Mois += 1;
+						if (Mois > 12) {
+						
+							Mois = 1;
+							Annee += 1;
+						
+						}
+					
+					}
+				break;
+				case 4:case 6:case 9:case 11:
+					if (Jour > 30) {
+					
+						Jour = 1;
+						Mois += 1;
+					
+					}
+				break;
+				case 3:
+					if (Annee%400 == 0) {
+					
+						if (Jour > 29) {
+					
+							Jour = 1;
+							Mois += 1;
+					
+						}
+					
+					}else{
+					
+						if (Jour > 28) {
+					
+							Jour = 1;
+							Mois += 1;
+					
+						}
+					
+					}
+				break;
+				}
+				document.getElementById("LendemainT").innerHTML = 'Demain sera le : '+ Jour + '/' + Mois + '/' + Annee;
+				
+			}
+		</script>
+		
+		<button  name="But11" onclick ="Lendemain();">Valider</button>
+		
+		
+	</div>
+	
+	<div id="AD">
+	
+		<h5>Exercice 12 : Une boulangerie est ouverte de 7 heures à 13 heures et de 16 heures à 20 heures, sauf le lundi après-midi et le mardi toute la journée</h5>
+		<h3 id="OuvertureT"></h3>
+		
+		<FORM>
+		<SELECT SIZE="7" id="JourDeSemaine">
+		<OPTION value=0>Lundi</OPTION>
+		<OPTION value=1>Mardi</OPTION>
+		<OPTION value=2>Mercredi</OPTION>
+		<OPTION value=3>Jeudi</OPTION>
+		<OPTION value=4>Vendredi</OPTION>
+		<OPTION value=5>Samedi</OPTION>
+		<OPTION value=6>Dimanche</OPTION>
+		</SELECT>
+		</FORM>
+		
+		<input type="text" id="insetextHeure" name="body" value="">
+		<script>
+				
+			function Ouverture() {
+			
+				var Jour = document.getElementById('JourDeSemaine').value;
+				var heure = parseInt(document.getElementById('insetextHeure').value);
+				console.log = (Jour);
+				if ((((( heure >= 7 ) && ( heure <= 13 ))) || ((heure >= 16 ) && ( heure <= 20 )) && (Jour!=0)) && (Jour!=1)) {
+						
+					document.getElementById("OuvertureT").innerHTML = 'Ouvert';
+					
+				}else{
+					
+					document.getElementById("OuvertureT").innerHTML = 'Fermé';
+					
+				}		
+			}
+		</script>
+		
+		<button  name="But11" onclick ="Ouverture();">Valider</button>
+		
+		
+	</div>
+	
+	<div id="FG">
+	
+		<h5>Exercice 13 : Payement en fonction de l'age et du poids des bagages</h5>
+		<h3 id="PrixT"></h3>
+		
+		<FORM>
+		<SELECT SIZE="3" id="AgeFG">
+		<OPTION value=0>Moins de 10 ans</OPTION>
+		<OPTION value=1>Plus de 60 ans</OPTION>
+		<OPTION value=2>Autre</OPTION>
+		</SELECT>
+		</FORM>
+		<input type="text" id="insetextHeure" name="body" value="">
+		<script>
+				
+			function Prix() {
+			
+				var Age = parseInt(document.getElementById('AgeFG').value);
+				var Bagage = parseInt(document.getElementById('insetextHeure').value);
+				var prix;
+				console.log = (Age,Bagage);
+				switch (Age) {
+				
+				case 1:
+					
+					prix = 0;
+					
+					
+				break;
+				case 0	:
+					
+					prix = 5;		
+					
+				break;
+				case 2:
+					
+					prix = 30;	
+					if (Bagage > 20) {
+					
+						prix += 10;
+					
+					}
+					
+				break;
+				
+				}
+				document.getElementById("PrixT").innerHTML = prix;
+				
+			}
+		</script>
+		
+		<button  name="But11" onclick ="Prix();">Valider</button>
+		
+		
+	</div>
+
+</body>
+</html>

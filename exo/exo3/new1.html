@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>XML Schéma</title>
+</head>
+<body>
+	
+	<p>
+		<a href="../../Index.html" class="bouton">Vers la page Index</a>
+	</p>
+	
+	<canvas id="Ligne" width="400" height="400" style="border:1px solid #0000FF;">
+		
+		<script>
+		
+			var canvas = document.getElementById("Ligne");
+			var canvas = document.getElementById("Ligne");
+			console.log(canvas);
+			var ctx = canvas.getContext("2d");
+			
+			//voile
+			ctx.beginPath();
+			ctx.moveTo(150, 80);
+			ctx.lineTo(300, 230);
+			ctx.lineTo(150, 230);
+			ctx.lineTo(150, 80);
+			ctx.fillStyle = 'lightblue'; 
+			ctx.fill();
+			
+			//mat
+			ctx.beginPath();
+			ctx.moveTo(140, 60);
+			ctx.lineTo(140, 250);
+			ctx.strokeStyle = '#A0522D'; 
+			ctx.lineWidth = 10;
+			ctx.stroke();
+			
+			//coque
+			ctx.beginPath();
+			ctx.moveTo(50, 250);
+			ctx.lineTo(100, 300);
+			ctx.lineTo(250, 300);
+			ctx.lineTo(300, 250);
+			ctx.fillStyle = '#CD853F'; 
+			ctx.lineWidth = 10;
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.moveTo(50, 250);
+			ctx.lineTo(100, 300);
+			ctx.lineTo(250, 300);
+			ctx.lineTo(300, 250);
+			ctx.strokeStyle = '#A0522D'; 
+			ctx.lineWidth = 5;
+			ctx.stroke();
+		
+		</script>
+	
+	</canvas>
+	
+
+	<canvas id="cercle" width="400" height="400" style="border:1px solid #0000FF;">
+		
+		<script>
+		
+			var canvas = document.getElementById("cercle");
+			var canvas = document.getElementById("cercle");
+			console.log(canvas);
+			var ctx = canvas.getContext("2d");
+			
+			ctx.beginPath();
+			ctx.lineWidth = '5';
+			ctx.strokeStyle = '#0088DD';
+			ctx.arc(100,100,40,0,2*Math.PI);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.lineWidth = '5';
+			ctx.strokeStyle = '#000000';
+			ctx.arc(195,100,40,0,2*Math.PI);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.lineWidth = '5';
+			ctx.strokeStyle = '#FF0000';
+			ctx.arc(290,100,40,0,2*Math.PI);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.lineWidth = '5';
+			ctx.strokeStyle = '#FFA500	';
+			ctx.arc(145,150,40,0,2*Math.PI);
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.lineWidth = '5';
+			ctx.strokeStyle = '#00AA00';
+			ctx.arc(240,150,40,0,2*Math.PI);
+			ctx.stroke();
+		
+		</script>
+	
+	</canvas>
+	
+
+</body>
+</html>

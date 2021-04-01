@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>XML Schéma</title>
+</head>
+<body>
+
+	<FORM>
+		<SELECT SIZE="5" onChange="document.location=this.options[this.selectedIndex].value">
+		<OPTION VALUE="#">     CHOISIR     </OPTION>
+		<OPTION VALUE="#">--------------</OPTION>
+		<OPTION VALUE="index.html">Carre dans carre</OPTION>
+		<OPTION VALUE="new2.html">Nuance de couleur</OPTION>
+		<OPTION VALUE="new3.html">Couleur aleatoire</OPTION>
+		<OPTION VALUE="new4.html">Ligne</OPTION>
+		<OPTION VALUE="new5.html">Cercle</OPTION>
+		<OPTION VALUE="new6.html">Degrader</OPTION>
+		<OPTION VALUE="new7.html">Degrader dun cercle</OPTION>
+		<OPTION VALUE="new8.html">Image</OPTION>
+		<OPTION VALUE="new9.html">Image Graphique</OPTION>
+		</SELECT>
+	</FORM>
+	
+	<canvas id="ImageGraph" width="300" height="200" style="border:1px solid #000000;">
+		
+		 <script type="text/javascript">
+            window.onload = function() 
+			
+            {
+                var canvasimage = document.getElementById("ImageGraph");
+                var ctx = canvasimage.getContext("2d");
+                
+                var objImg = new Image();
+                objImg.src='https://mdn.mozillademos.org/files/5395/backdrop.png';
+                objImg.width=canvasimage.width/2;
+                objImg.height=canvasimage.height/2;
+                ctx.drawImage(objImg,(canvasimage.width-objImg.width)/2, (canvasimage.height-objImg.height)/2,objImg.width, objImg.height);
+                objImg.onload = function()
+                {
+
+                    ctx.drawImage(objImg,0,0);
+					ctx.beginPath();
+					ctx.moveTo(30, 96);
+					ctx.lineTo(70, 66);
+					ctx.lineTo(103, 76);
+					ctx.lineTo(170, 15);
+					ctx.stroke();
+                }
+	
+            }
+			
+        </script>
+	
+	</canvas>
+
+	
+	
+
+</body>
+</html>

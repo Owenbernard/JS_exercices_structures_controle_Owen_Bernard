@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>XML Schéma</title>
+	<link rel="stylesheet" type="text/css" href="new1.css">
+</head>
+<body>
+
+	<p>
+		<a href="../../Index.html" class="bouton">Vers la page Index</a>
+	</p>
+
+	<!-- affichage titre -->
+	<div id="Cb">
+		<p>Gros titre</p>
+	</div>
+	
+	<!-- premiere image -->
+	<div id="PrI">
+		<img id='toto' src="" width="250" height="200" />
+		<script>
+
+			var objImg = document.getElementById('toto');
+			objImg.src='image0.jpg';
+	
+		</script>
+	</div>
+	
+	<!-- affichage de la boucle image -->
+	<div id="BoI">
+		
+		<script type="text/javascript">
+
+			var idImg="";
+			var chemin="";
+			var siseImg="200";
+		
+			for(i=1;i<=5;i++){
+		
+				idImg="Image"+i;
+				chemin="image"+i+".jpg";
+				console.log(chemin);
+				document.write("<img src=",chemin," alt=",idImg," id=",idImg," height=",siseImg," />");
+			
+			}
+			
+		</script>
+	</div>
+</body>
+</html>

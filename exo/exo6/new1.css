@@ -1,8 +1,6 @@
 a.bouton {
   color: black;
   text-decoration: none;
-  background-color: lightblue;
-  border: red;
   font-weight: bold;
   text-align: center;
   padding: 5px;
@@ -11,21 +9,15 @@ a.bouton:hover {
   background-color: #6495ED;
 }
 
-#text1{
-	
-	text-align: center;	
-	
-}
-
-h1{
-	
-	text-align: center;
-	color: red;
-	font-size: 3rem;
-		
-}
 body {
   
 	background-color: lightgrey;
   
+}
+
+#Nuance{
+	
+	background-color: red;
+	
+	
 }
