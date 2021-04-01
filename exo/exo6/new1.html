@@ -22,9 +22,363 @@
 				var ctx = canvas.getContext("2d");
 		
 				ctx.fillStyle = "rgba(0,0,255,1 )";
-				ctx.fillRect(50, 50, 150, 200);
+				ctx.fillRect(50,50, 150, 150);
 				ctx.strokeStyle="rgba(255,255,255,1)";
-				ctx.strokeRect(50,50,150,200);
+				ctx.lineWidth=10; 
+				ctx.strokeRect(50,50,150,150);
+		
+			</script>
+			
+		</canvas>
+
+	</div>
+	
+	<div id='exercice2'>
+	
+		<canvas id="Polygone" width="300" height="200" style="border:1px solid #000000;">
+
+			<script>
+				
+				var canvas = document.getElementById("Polygone");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				ctx.beginPath();
+				ctx.moveTo(70, 20);
+				ctx.lineTo(230, 20);
+				ctx.lineTo(270, 100);
+				ctx.lineTo(230, 180);
+				ctx.lineTo(70, 180);
+				ctx.lineTo(30, 100);
+				ctx.lineTo(70, 20);
+				ctx.fillStyle = 'darkblue'; 
+				ctx.fill();
+				
+				
+				
+				ctx.beginPath();
+				ctx.moveTo(70, 20);
+				ctx.lineTo(230, 20);
+				ctx.lineTo(270, 100);
+				ctx.lineTo(230, 180);
+				ctx.lineTo(70, 180);
+				ctx.lineTo(30, 100);
+				ctx.lineTo(70, 20);
+				ctx.strokeStyle="rgba(0,255,0,1)";
+				ctx.lineWidth=10; 
+				ctx.stroke();
+		
+			</script>
+			
+		</canvas>
+
+	</div>
+	
+	<div id='exercice3'>
+	
+		<canvas id="Rosase" width="1500" height="500" style="border:1px solid #000000;">
+
+			<script>
+				
+				var canvas = document.getElementById("Rosase");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(250 + x1, 250 + y1);
+				do {
+					if (i > 20000) break;
+					var x2 = ((R+r)*Math.cos(i*Math.PI/72) - (r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))) + 250;
+					var y2 = ((R+r)*Math.sin(i*Math.PI/72) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72))) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="orange";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+			<script>
+				
+				var canvas = document.getElementById("Rosase");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(730 + x1, 250 + y1);
+				do {
+					if (i > 2000) break;
+					var x2 = (((R+r)*Math.cos(i*Math.PI/72)/1.25) - ((r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72)))/1.25) + 750;
+					var y2 = (((R+r)*Math.sin(i*Math.PI/72)/1.25) - ((r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)))/1.25) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="orange";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+			<script>
+				
+				var canvas = document.getElementById("Rosase");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(1218	 + x1, 250 + y1);
+				do {
+					if (i > 20000) break;
+					var x2 = (((R+r)*Math.cos(i*Math.PI/72)/1.5) - ((r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72)))/1.5) + 1250;
+					var y2 = (((R+r)*Math.sin(i*Math.PI/72)/1.5) - ((r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)))/1.5) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="orange";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+		</canvas>
+
+	</div>
+
+	<div id='exercice3-2'>
+	
+		<canvas id="Rosase2" width="1500" height="500" style="border:1px solid #000000;">
+
+			<script>
+				
+				var canvas = document.getElementById("Rosase2");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(250 + x1, 250 + y1);
+				do {
+					if (i > 20000) break;
+					var x2 = (R+r)*Math.cos(i*Math.PI/72) - (r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72)) + 250;
+					var y2 = ((((R+r)*Math.sin(i*Math.PI/72)/1.25) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)))/1.25) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="blue";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+			<script>
+				
+				var canvas = document.getElementById("Rosase2");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(750 + x1, 250 + y1);
+				do {
+					if (i > 2000) break;
+					var x2 = (R+r)*Math.cos(i*Math.PI/72) - ((r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))) + 750;
+					var y2 = ((((R+r)*Math.sin(i*Math.PI/72)/1.5) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)))/1.5) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="blue";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+			<script>
+				
+				var canvas = document.getElementById("Rosase2");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(1250	 + x1, 250 + y1);
+				do {
+					if (i > 20000) break;
+					var x2 = (R+r)*Math.cos(i*Math.PI/72) - ((r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))) + 1250;
+					var y2 = ((((R+r)*Math.sin(i*Math.PI/72)/1.75) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)))/1.75) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="blue";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+		</canvas>
+
+	</div>
+
+	<div id='exercice3-3'>
+	
+		<canvas id="Rosase3" width="1500" height="500" style="border:1px solid #000000;">
+
+			<script>
+				
+				var canvas = document.getElementById("Rosase3");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(230 + x1, 250 + y1);
+				do {
+					if (i > 20000) break;
+					var x2 = (((R+r)*Math.cos(i*Math.PI/72)/1.25) - (r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))/1.25) + 250;
+					var y2 = (R+r)*Math.sin(i*Math.PI/72) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="green";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+			<script>
+				
+				var canvas = document.getElementById("Rosase3");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(716 + x1, 250 + y1);
+				do {
+					if (i > 2000) break;
+					var x2 = (((R+r)*Math.cos(i*Math.PI/72)/1.5) - ((r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72)))/1.5) + 750;
+					var y2 = (R+r)*Math.sin(i*Math.PI/72) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="green";
+				ctx.lineWidth=5; 
+				ctx.stroke();
+		
+			</script>
+			
+			<script>
+				
+				var canvas = document.getElementById("Rosase3");
+				console.log(canvas);
+				var ctx = canvas.getContext("2d");
+		
+				var R = 130;
+				var O = 30;
+				var r = 30;
+		
+		
+				var x1 = R-O;
+				var y1 = 0;
+				var i  = 1;
+				ctx.beginPath();
+				ctx.moveTo(1208	 + x1, 250 + y1);
+				do {
+					if (i > 20000) break;
+					var x2 = (((R+r)*Math.cos(i*Math.PI/72)/1.75) - ((r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72)))/1.75) + 1250;
+					var y2 = (R+r)*Math.sin(i*Math.PI/72) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72)) + 250;
+					ctx.lineTo(x2, y2);
+					x1 = x2;
+					y1 = y2;
+					i++;
+				}
+				while (x2 != R-O && y2 != 0 );
+				ctx.strokeStyle="green";
+				ctx.lineWidth=5; 
+				ctx.stroke();
 		
 			</script>
 			
